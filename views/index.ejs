@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blog Home</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <button onclick="toggleTheme()" style="position:fixed; top:1rem; right:1rem;">🌓 Toggle Theme</button>
+  <div class="container">
+    <h1>My Blog</h1>
+    <a href="/posts/new">Create New Post</a>
+
+    <% posts.forEach(post => { %>
+      <div class="post">
+        <h2><%= post.title %></h2>
+        <p><%= post.content %></p>
+        <div class="actions">
+          <a href="/posts/<%= post.id %>/edit">Edit</a>
+          <form action="/posts/<%= post.id %>?_method=DELETE" method="POST" style="display:inline;">
+            <button type="submit">Delete</button>
+          </form>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+  <script>
+  function toggleTheme() {
+    document.body.classList.toggle("dark");
+    localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
+  }
+
+  window.onload = () => {
+    if (localStorage.getItem("theme") === "dark") {
+      document.body.classList.add("dark");
+    }
+  };
+</script>
+
+</body>
+</html>
