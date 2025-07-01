@@ -1,6 +1,6 @@
 :root {
   --bg-color: #f7f7f7;
-  --text-color: #333;
+  --text-color: #0f0f0f;
   --card-bg: #ffffff;
   --link-color: #0066cc;
   --button-bg: #0066cc;
@@ -10,6 +10,7 @@
 body.dark {
   --bg-color: #121212;
   --text-color: #e0e0e0;
+    color:white;
   --card-bg: #1e1e1e;
   --link-color: #66ccff;
   --button-bg: #333;
@@ -21,7 +22,7 @@ body.dark {
 
 body {
   background: var(--bg-color);
-  color: var(--text-color);
+  color: black;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   transition: all 0.3s ease;
   background-image: url(img2.jpg);
